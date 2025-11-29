@@ -23,7 +23,8 @@ class BackButtonWidget extends StatelessWidget {
         child: Center(
           child: IconButton(
             onPressed: () {
-              context.go('/');
+              context.pop();
+
             },
             icon: Icon(
               Icons.arrow_back_ios_new_rounded,

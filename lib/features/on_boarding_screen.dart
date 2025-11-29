@@ -24,7 +24,9 @@ class OnBoardingScreen extends StatelessWidget {
           SizedBox(height: 15.h),
           PrimaryButtonWidget(
             onPressed: () {
-              context.go(AppRouters.loginScreen);
+
+                context.push(AppRouters.loginScreen);
+
             },
             buttonText: 'Login',
             fontSize: 20.sp,
@@ -35,7 +37,7 @@ class OnBoardingScreen extends StatelessWidget {
             buttonText: 'Register',
             onPressed: () {
 
-              context.go(AppRouters.registerScreen);
+              context.push(AppRouters.registerScreen);
             },
             bordersColor: AppColors.primaryColor,
             textColor: AppColors.primaryColor,

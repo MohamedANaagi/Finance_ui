@@ -9,6 +9,9 @@ class CustomTextField extends StatelessWidget {
   final double? width;
   final double? height;
   final Color? hintTextColor;
+  final TextEditingController? controller;
+  final String? Function(String?)? validator;
+
 
   const CustomTextField({
     super.key,
@@ -16,7 +19,7 @@ class CustomTextField extends StatelessWidget {
     this.suffixIcon,
     this.width,
     this.height,
-    this.hintTextColor, this.isPassword,
+    this.hintTextColor, this.isPassword, this.controller, this.validator,
   });
 
   @override
@@ -24,7 +27,12 @@ class CustomTextField extends StatelessWidget {
     return SizedBox(
       width: width ?? 331.w,
       height: height ?? 56.h,
-      child: TextField(
+      child: TextFormField(
+        controller:controller ,
+        validator: validator ,
+
+
+
         
         obscureText: isPassword ?? false,
 
