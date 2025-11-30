@@ -9,51 +9,62 @@ import '../core/widgets/primary_outlined_button_widget.dart';
 
 
 class OnBoardingScreen extends StatelessWidget {
-  OnBoardingScreen({super.key});
+  const OnBoardingScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: [
-          Image.asset(
-            'assets/images/generated-7577945_1280 1.png',
-            height: 570.w,
-            width: 375.h,
-          ),
-          SizedBox(height: 15.h),
-          PrimaryButtonWidget(
-            onPressed: () {
+    return SafeArea(
+      child: Scaffold(
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              // ----------- الصورة -----------
+              Image.asset(
+                'assets/images/generated-7577945_1280 1.png',
+                width: 1.sw,        // عرض الشاشة
+                height: 0.55.sh,    // 55% من ارتفاع الشاشة
+                fit: BoxFit.cover,  // بدون تشويه
+              ),
 
-                context.push(AppRouters.loginScreen);
+              SizedBox(height: 20.h),
 
-            },
-            buttonText: 'Login',
-            fontSize: 20.sp,
-            buttonColor: AppColors.primaryColor,
-          ),
-          SizedBox(height: 10.h),
-          PrimaryOutlinedButtonWidget(
-            buttonText: 'Register',
-            onPressed: () {
+              PrimaryButtonWidget(
+                onPressed: () {
+                  context.push(AppRouters.loginScreen);
+                },
+                buttonText: 'Login',
+                fontSize: 20.sp,
+                buttonColor: AppColors.primaryColor,
+              ),
 
-              context.push(AppRouters.registerScreen);
-            },
-            bordersColor: AppColors.primaryColor,
-            textColor: AppColors.primaryColor,
+              SizedBox(height: 10.h),
+
+              PrimaryOutlinedButtonWidget(
+                buttonText: 'Register',
+                onPressed: () {
+                  context.push(AppRouters.registerScreen);
+                },
+                bordersColor: AppColors.primaryColor,
+                textColor: AppColors.primaryColor,
+              ),
+
+              SizedBox(height: 120.h),
+
+              Text(
+                'Continue as a guest',
+                style: TextStyle(
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.w500,
+                  color: AppColors.blackColor,
+                  decoration: TextDecoration.underline,
+                ),
+              ),
+              SizedBox(height: 30.h),
+            ],
           ),
-          SizedBox(height: 46.h),
-          Text(
-            'Continue as a guest',
-            style: TextStyle(
-              fontSize: 16.sp,
-              fontWeight: FontWeight.w500,
-              color: AppColors.blackColor,
-              decoration: TextDecoration.underline,
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }
 }
+

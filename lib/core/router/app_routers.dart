@@ -7,6 +7,7 @@ class AppRouters{
   static String registerScreen= '/register';
   static String forgotPasswordScreen= '/forgotPasswordScreen';
   static String otpScreen= '/otpScreen';
+  static String mainScreen= '/mainScreen';
 
 
 }

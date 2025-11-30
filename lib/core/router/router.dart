@@ -1,4 +1,5 @@
 import 'package:finance_ui/features/auth/otp_screen.dart';
+import 'package:finance_ui/features/main_screen/main_screen.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../features/auth/forgot_password.dart';
@@ -50,7 +51,13 @@ class RouterGenerator {
           return  OtpScreen();
         },
       ),
-
+      GoRoute(
+        path: AppRouters.mainScreen,
+        name: AppRouters.mainScreen,
+        builder: ( context,  state) {
+          return  MainScreen();
+        },
+      ),
 
     ],
 

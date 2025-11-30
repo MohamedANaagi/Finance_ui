@@ -20,61 +20,64 @@ class RegisterScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
       body:Padding(padding: EdgeInsets.symmetric(horizontal: 22.w),
-        child: Column(
-          children: [
-            SizedBox(height: 12.h),
-            BackButtonWidget(),
-            SizedBox(height: 28.h),
-            CustomMainText(mainText: 'Hello! Register to get \nstarted'),
-            SizedBox(height: 32.h),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              SizedBox(height: 12.h),
+              BackButtonWidget(),
+              SizedBox(height: 28.h),
+              CustomMainText(mainText: 'Hello! Register to get \nstarted'),
+              SizedBox(height: 32.h),
+          
+              CustomTextField(hintText: 'Username'),
+              SizedBox(height: 15.h),
+              CustomTextField(hintText: 'Email'),
+              SizedBox(height: 15.h),
+              CustomTextField(hintText: 'Password'),
+              SizedBox(height: 15.h),
+              CustomTextField(hintText: 'Confirm password'),
+              SizedBox(height: 30.h),
+              PrimaryButtonWidget(
+                onPressed: () {},
+                buttonText: 'Register',
+                fontSize: 20.sp,
+                buttonColor: AppColors.primaryColor,
+              ),
+              SizedBox(height: 35.h),
+              Row(
+                children: [
+                  SizedBox(width: 111.w, child: Divider()),
+                  Text('Or Login with'),
+                  SizedBox(width: 111.w, child: Divider()),
+                ],
+              ),
+          
+              SizedBox(height: 22.h),
+              SocialLoginButton(),
+              SizedBox(height: 20.h),
+          
+              Center(
+                child: RichText(
+                  text: TextSpan(
+                    text: 'Don’t have an account? ',
 
-            CustomTextField(hintText: 'Username'),
-            SizedBox(height: 15.h),
-            CustomTextField(hintText: 'Email'),
-            SizedBox(height: 15.h),
-            CustomTextField(hintText: 'Password'),
-            SizedBox(height: 15.h),
-            CustomTextField(hintText: 'Confirm password'),
-            SizedBox(height: 30.h),
-            PrimaryButtonWidget(
-              onPressed: () {},
-              buttonText: 'Register',
-              fontSize: 20.sp,
-              buttonColor: AppColors.primaryColor,
-            ),
-            SizedBox(height: 35.h),
-            Row(
-              children: [
-                SizedBox(width: 111.w, child: Divider()),
-                Text('Or Login with'),
-                SizedBox(width: 111.w, child: Divider()),
-              ],
-            ),
-
-            SizedBox(height: 22.h),
-            SocialLoginButton(),
-            SizedBox(height: 20.h),
-
-            Center(
-              child: RichText(
-                text: TextSpan(
-                  text: 'Don’t have an account? ',
-                  style: AppStyles.black16w500Style.copyWith(
-                    color: AppColors.primaryColor,
-                  ),
-                  children: [
-                    TextSpan(
-                      text: ' Register Now ',
-                      style: AppStyles.black16w500Style.copyWith(
-                        color: AppColors.blackColor,
-                      ),
+                    style: AppStyles.black16w500Style.copyWith(
+                      color: AppColors.primaryColor,
                     ),
-                  ],
+                    children: [
+                      TextSpan(
+                        text: ' Register Now ',
+                        style: AppStyles.black16w500Style.copyWith(
+                          color: AppColors.blackColor,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
-            ),
-
-          ],
+          
+            ],
+          ),
         ),
 
       ) ,

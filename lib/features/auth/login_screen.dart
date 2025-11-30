@@ -48,9 +48,9 @@ bool isPassword = true;
                   SizedBox(height: 28.h),
                   SizedBox(
                     width: 280.w,
-                    height: 78.h,
-              
-                    child: CustomMainText(mainText: 'Welcome back!  \nAgain!'),
+                    height: 100.h,
+
+                    child: CustomMainText(mainText: 'Welcome back!  \nAgain!',),
                   ),
                   SizedBox(height: 32.h),
                   CustomTextField(hintText: 'Enter your email',
@@ -82,7 +82,7 @@ bool isPassword = true;
                         isPassword ? Icons.visibility_off : Icons.visibility,
                       ),
                       onPressed: () {
-                        
+
                         setState(() {
                           isPassword = !isPassword;
                         });
@@ -102,16 +102,23 @@ bool isPassword = true;
                   PrimaryButtonWidget(
                     onPressed: () {
                        if(formKey.currentState!.validate()){
-              
+                         context.push(AppRouters.mainScreen);
+                       }else{
+                         ScaffoldMessenger.of(context).showSnackBar(
+                           const SnackBar(
+                             content: Text('Please fill all the fields'),
+                           ),
+                         );
+
                        }
-              
+
                     },
                     buttonText: 'Login',
                     fontSize: 20.sp,
                     buttonColor: AppColors.primaryColor,
                   ),
                   SizedBox(height: 35.h),
-              
+
                   Row(
                     children: [
                       SizedBox(width: 111.w, child: Divider()),
@@ -119,11 +126,11 @@ bool isPassword = true;
                       SizedBox(width: 111.w, child: Divider()),
                     ],
                   ),
-              
+
                   SizedBox(height: 22.h),
                   SocialLoginButton(),
                   SizedBox(height: 120.h),
-              
+
                   Center(
                     child: RichText(
                       text: TextSpan(
@@ -142,7 +149,7 @@ bool isPassword = true;
                       ),
                     ),
                   ),
-              
+
                   // Row(
                   //   children: [
                   //     Text("Don’t have an account? ",style: TextStyle(
