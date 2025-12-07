@@ -1,6 +1,3 @@
-
-
-
 import 'package:finance_ui/core/widgets/primary_button_widget.dart';
 import 'package:finance_ui/features/auth/widgets/back_button_widget.dart';
 import 'package:finance_ui/features/auth/widgets/social_login_button.dart';
@@ -17,9 +14,9 @@ class RegisterScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-      body:Padding(padding: EdgeInsets.symmetric(horizontal: 22.w),
+    return Scaffold(
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 22.w),
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -28,7 +25,7 @@ class RegisterScreen extends StatelessWidget {
               SizedBox(height: 28.h),
               CustomMainText(mainText: 'Hello! Register to get \nstarted'),
               SizedBox(height: 32.h),
-          
+
               CustomTextField(hintText: 'Username'),
               SizedBox(height: 15.h),
               CustomTextField(hintText: 'Email'),
@@ -51,11 +48,11 @@ class RegisterScreen extends StatelessWidget {
                   SizedBox(width: 111.w, child: Divider()),
                 ],
               ),
-          
+
               SizedBox(height: 22.h),
               SocialLoginButton(),
               SizedBox(height: 20.h),
-          
+
               Center(
                 child: RichText(
                   text: TextSpan(
@@ -75,13 +72,9 @@ class RegisterScreen extends StatelessWidget {
                   ),
                 ),
               ),
-          
             ],
           ),
         ),
-
-      ) ,
-
       ),
     );
   }

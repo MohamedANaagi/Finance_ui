@@ -12,61 +12,59 @@ class OnBoardingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: Stack(
-          children: [
-            // -------- خلفية الصورة --------
-            SizedBox(
-              width: 1.sw,
-              height: 1.sh,
-              child: Image.asset(
-                'assets/images/ChatGPT Image Dec 1, 2025, 12_33_01 AM.png',
-                fit: BoxFit.cover, // تغطي الشاشة بالكامل
-              ),
+    return Scaffold(
+      body: Stack(
+        children: [
+          // -------- خلفية الصورة --------
+          SizedBox(
+            width: 1.sw,
+            height: 1.sh,
+            child: Image.asset(
+              'assets/images/ChatGPT Image Dec 1, 2025, 12_33_01 AM.png',
+              fit: BoxFit.cover, // تغطي الشاشة بالكامل
             ),
+          ),
 
-            // -------- المحتوى فوق الصورة (الأزرار) --------
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 32.h),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    PrimaryButtonWidget(
-                      onPressed: () {
-                        context.push(AppRouters.loginScreen);
-                      },
-                      buttonText: 'Login',
-                      fontSize: 20.sp,
-                      buttonColor: AppColors.primaryColor,
+          // -------- المحتوى فوق الصورة (الأزرار) --------
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 32.h),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  PrimaryButtonWidget(
+                    onPressed: () {
+                      context.push(AppRouters.loginScreen);
+                    },
+                    buttonText: 'Login',
+                    fontSize: 20.sp,
+                    buttonColor: AppColors.primaryColor,
+                  ),
+                  SizedBox(height: 10.h),
+                  PrimaryOutlinedButtonWidget(
+                    buttonText: 'Register',
+                    onPressed: () {
+                      context.push(AppRouters.registerScreen);
+                    },
+                    bordersColor: AppColors.primaryColor,
+                    textColor: AppColors.primaryColor,
+                  ),
+                  SizedBox(height: 24.h),
+                  Text(
+                    'Continue as a guest',
+                    style: TextStyle(
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w500,
+                      color: AppColors.blackColor,
+                      decoration: TextDecoration.underline,
                     ),
-                    SizedBox(height: 10.h),
-                    PrimaryOutlinedButtonWidget(
-                      buttonText: 'Register',
-                      onPressed: () {
-                        context.push(AppRouters.registerScreen);
-                      },
-                      bordersColor: AppColors.primaryColor,
-                      textColor: AppColors.primaryColor,
-                    ),
-                    SizedBox(height: 24.h),
-                    Text(
-                      'Continue as a guest',
-                      style: TextStyle(
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.w500,
-                        color: AppColors.blackColor,
-                        decoration: TextDecoration.underline,
-                      ),
-                    ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
